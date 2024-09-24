@@ -388,8 +388,8 @@
                         </div>
 
                         <!-- worked as engineer  -->
-                         <div class="px-2 mb-3 card">
-                          <p class="my-2">Highest Degree</p>
+                        <div class="px-2 mb-3 card">
+                          <p class="my-2">Worked as Engineer</p>
                           <div class="container-fluid">
                             <div
                               class="d-xl-flex align-items-start gap-5 justify-content-lg-start my-xl-2"
@@ -398,12 +398,13 @@
                                 <input
                                   class="form-check-input"
                                   type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
+                                  name="noOfYearsWorked"
+                                  id="noOfYearsWorked"
+                                  value="1-2"
                                 />
                                 <label
                                   class="form-check-label"
-                                  for="highestDegreeEarn"
+                                  for="noOfYearsWorked"
                                 >
                                   1 - 2
                                 </label>
@@ -412,60 +413,48 @@
                                 <input
                                   class="form-check-input"
                                   type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
+                                  value="3-4"
+                                  name="noOfYearsWorked"
+                                  id="noOfYearsWorked"
                                   checked
                                 />
                                 <label
                                   class="form-check-label"
-                                  for="highestDegreeEarn"
+                                  for="noOfYearsWorked"
                                 >
-                                
+                                  3 - 4
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input
                                   class="form-check-input"
                                   type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
+                                  name="noOfYearsWorked"
+                                  id="noOfYearsWorked"
+                                  value="5-6"
                                   checked
                                 />
                                 <label
                                   class="form-check-label"
-                                  for="highestDegreeEarn"
+                                  for="noOfYearsWorked"
                                 >
-                                  M.S
+                                  5 - 6
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input
                                   class="form-check-input"
                                   type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
+                                  value=">=7"
+                                  name="noOfYearsWorked"
+                                  id="noOfYearsWorked"
                                   checked
                                 />
                                 <label
                                   class="form-check-label"
-                                  for="highestDegreeEarn"
+                                  for="noOfYearsWorked"
                                 >
-                                  Ph.D
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="highestDegreeEarn"
-                                >
-                                  Others
+                                  >=7
                                 </label>
                               </div>
                             </div>
@@ -473,15 +462,37 @@
 
                           <div class="form-floating d-inline d-none">
                             <input
-                              type="email"
+                              type="text"
                               class="form-control w-50 my-3"
-                              id="floatingInputValue"
+                              id="degree"
                               placeholder="name@example.com"
                               value=""
                             />
-                            <label for="floatingInputValue"
-                              >Enter your degree</label
-                            >
+                            <label for="degree">Enter your degree</label>
+                          </div>
+                        </div>
+
+                        <!-- contact number  -->
+                        <div class="form-floating mb-3">
+                          <input
+                            type="tel"
+                            class="form-control"
+                            id="contactNumber"
+                            placeholder="contact number"
+                          />
+                          <label for="contactNumber">Contact Number</label>
+                        </div>
+
+                        <div>
+                          <div class="form-floating mb-3">
+                            <input
+                              type="email"
+                              id="email"
+                              class="form-control"
+                              placeholder="Email"
+                              required
+                            />
+                            <label for="email">Email</label>
                           </div>
                         </div>
                       </form>
