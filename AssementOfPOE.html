@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Karpagam College Of Engineering</title>
+    <!-- favicon link moved inside the head -->
+    <link
+      rel="shortcut icon"
+      href="./assets/images/Logo 1.avif"
+      type="image/x-icon"
+    />
+    <!-- bootstrap cdn css -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script src="./script/AssementOfPOE.js"></script>
+
+    <link rel="stylesheet" href="./style/style.css" />
+    <link rel="stylesheet" href="./style/index.css" />
+    <link rel="stylesheet" href="./style/AlumniQuestionnarie.css" />
+  </head>
+  <body>
+    <!-- navbar section  -->
+    <nav class="navbar navbar-expand-lg bg-body-white border">
+      <div class="container">
+        <a href="#" class="navbar-brand mx-auto mx-md-0">
+          <img
+            src="./assets/images/KCE 2024 UPDATED VERSION LOGO.png"
+            class="mb-2 navbar-logo mb-sm-0"
+            alt="Karpagam College Logo"
+          />
+        </a>
+      </div>
+    </nav>
+
+    <section class="my-md-5 my-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-2 col-lg-1"></div>
+          <div class="col-12 col-md-8 col-lg-10">
+            <div class="card border shadow">
+              <div class="card-body">
+                <div
+                  class="fs-2 alumni-header text-center card-text fw-light card-title"
+                >
+                  Assessment of Program Educational Objectives
+                </div>
+
+                <div class="alumni-intro px-md-5">
+                  Please rate the following program educational objectives.
+                  These objectives are statements that describe the expected
+                  accomplishments of graduate after graduation. Each respondent
+                  is asked to rate each item with respect to your knowledge and
+                  experience gained. Each scale item has five response
+                  categories, ranging from “5- High” to “1-Lowest”.
+                </div>
+
+                <form onsubmit="handleSubmit(e)">
+                  <!-- q1 -->
+                  <div class="px-md-5 my-3 my-md-4 px-1">
+                    <div class="card border border-1 shadow px-3 pt-3">
+                      <p class="fs-6">
+                        Understand the impact of the professional engineering
+                        solutions in societal and environmental contexts, and
+                        demonstrate the knowledge of, and need for sustainable
+                        development.
+                      </p>
+                      <div
+                        class="star-rating d-flex justify-content-center align-items-center gap-3 gap-md-5"
+                      >
+                        <input
+                          type="radio"
+                          id="q1-star5"
+                          name="rating1"
+                          value="Excellent"
+                        />
+                        <label for="q1-star5" title="5 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q1-star4"
+                          name="rating1"
+                          value="Very Good"
+                        />
+                        <label for="q1-star4" title="4 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q1-star3"
+                          name="rating1"
+                          value="Good"
+                        />
+                        <label for="q1-star3" title="3 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q1-star2"
+                          name="rating1"
+                          value="Average"
+                        />
+                        <label for="q1-star2" title="2 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q1-star1"
+                          name="rating1"
+                          value="Satisfactory"
+                        />
+                        <label for="q1-star1" title="1 star" class="fs-1"
+                          >★</label
+                        >
+                      </div>
+                      <p
+                        class="text-center text-muted mt-2"
+                        id="rating1-value"
+                      ></p>
+                    </div>
+                  </div>
+
+                  <!-- q2 -->
+                  <div class="px-md-5 my-3 my-md-4 px-1">
+                    <div class="card border border-1 shadow px-3 pt-3">
+                      <p class="fs-6">
+                        Are you successful in taking up multidisciplinary
+                        projects and work as a team with full awareness of your
+                        responsibility to the society?
+                      </p>
+                      <div
+                        class="star-rating d-flex justify-content-center align-items-center gap-3 gap-md-5"
+                      >
+                        <input
+                          type="radio"
+                          id="q2-star5"
+                          name="rating2"
+                          value="Excellent"
+                        />
+                        <label for="q2-star5" title="5 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q2-star4"
+                          name="rating2"
+                          value="Very Good"
+                        />
+                        <label for="q2-star4" title="4 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q2-star3"
+                          name="rating2"
+                          value="Good"
+                        />
+                        <label for="q2-star3" title="3 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q2-star2"
+                          name="rating2"
+                          value="Average"
+                        />
+                        <label for="q2-star2" title="2 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q2-star1"
+                          name="rating2"
+                          value="Satisfactory"
+                        />
+                        <label for="q2-star1" title="1 star" class="fs-1"
+                          >★</label
+                        >
+                      </div>
+                      <p
+                        class="text-center text-muted mt-2"
+                        id="rating2-value"
+                      ></p>
+                    </div>
+                  </div>
+
+                  <!-- q3 -->
+                  <div class="px-md-5 my-3 my-md-4 px-1">
+                    <div class="card border border-1 shadow px-3 pt-3">
+                      <p class="fs-6">
+                        Are you in the habit of attending conferences,
+                        publishing papers or did you go for any higher studies
+                        after graduating from here?
+                      </p>
+                      <div
+                        class="star-rating d-flex justify-content-center align-items-center gap-3 gap-md-5"
+                      >
+                        <input
+                          type="radio"
+                          id="q3-star5"
+                          name="rating3"
+                          value="Excellent"
+                        />
+                        <label for="q3-star5" title="5 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q3-star4"
+                          name="rating3"
+                          value="Very Good"
+                        />
+                        <label for="q3-star4" title="4 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q3-star3"
+                          name="rating3"
+                          value="Good"
+                        />
+                        <label for="q3-star3" title="3 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q3-star2"
+                          name="rating3"
+                          value="Average"
+                        />
+                        <label for="q3-star2" title="2 stars" class="fs-1"
+                          >★</label
+                        >
+                        <input
+                          type="radio"
+                          id="q3-star1"
+                          name="rating3"
+                          value="Satisfactory"
+                        />
+                        <label for="q3-star1" title="1 star" class="fs-1"
+                          >★</label
+                        >
+                      </div>
+                      <p
+                        class="text-center text-muted mt-2"
+                        id="rating3-value"
+                      ></p>
+                    </div>
+                  </div>
+
+                  <!-- button  -->
+                  <div class="text-end pe-md-5">
+                    <button
+                      onclick="handleSubmit()"
+                      class="btn bg-primary-subtle border-primary"
+                    >
+                      Submit
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-2 col-lg-1"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- bootstrap cdn script -->
+    <script>
+   
+    </script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
