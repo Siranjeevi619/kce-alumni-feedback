@@ -4,5 +4,38 @@
 }
 
 .clg {
-  color: #ff6d10;
+  color: #ff6d0f;
+}
+
+.alumni-intro {
+  text-align: justify;
+}
+
+@media (max-width: 520px) {
+  .alumni-intro {
+    font-size: 12px;
+    font-weight: 100;
+  }
+  .navbar-logo {
+    height: 40px;
+    width: auto;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 520px) and (max-width: 1440px) {
+  .navbar-logo {
+    height: 60px;
+    width: auto;
+
+  }
+}
+
+@media (min-width: 1440px) {
+  .navbar-logo {
+    height: 80px;
+    width: auto;
+  }
 }
