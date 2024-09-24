@@ -1,0 +1,56 @@
+p {
+  text-align: justify;
+}
+
+.star-rating {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  margin: 0 auto;
+  position: relative;
+}
+
+.star-rating input {
+  display: none;
+}
+
+.star-rating label {
+  font-size: 2rem;
+  color: #ddd;
+  cursor: pointer;
+  padding: 0 0.1rem;
+  transition: color 0.3s;
+}
+
+.star-rating input:checked ~ label {
+  color: #ffc107;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+  color: #ffc107;
+}
+
+/* Retain color on checked hover */
+.star-rating input:checked ~ label:hover,
+.star-rating input:checked ~ label:hover ~ label {
+  color: #ffc107;
+}
+
+@media (max-width: 576px) {
+  .star-rating label {
+    font-size: 1.5rem;
+  }
+  .card-body {
+    padding: 1rem;
+  }
+  .fs-2 {
+    font-size: 1.5rem;
+  }
+  .fs-6 {
+    font-size: 0.875rem;
+  }
+  .alumni-header {
+    font-size: 1.25rem;
+  }
+}
