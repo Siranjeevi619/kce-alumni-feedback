@@ -19,6 +19,7 @@
     />
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <!-- navbar section  -->
@@ -50,40 +51,56 @@
                   <div class="row">
                     <div class="col-12 col-md-2"></div>
                     <div class="col-12 col-md-8">
-                      <form class="Montserrat" action="" method="post">
-                        <!-- alumni name  -->
+                      <form
+                        class="Montserrat needs-validation"
+                        novalidate
+                        onsubmit="handleInfoForm(event)"
+                      >
+                        <!-- Alumni name -->
                         <div class="form-floating mb-3">
                           <input
                             type="text"
                             name="name"
                             class="form-control"
-                            id="floatingInput"
-                            placeholder="name of the alumni"
+                            id="alumniName"
+                            placeholder="Name of the Alumni"
+                            required
                           />
-                          <label for="floatingInput">Alumni Name</label>
+                          <label for="alumniName" class="form-label"
+                            >Alumni Name</label
+                          >
+                          <div class="invalid-feedback">
+                            Please enter the alumni name.
+                          </div>
+                          <div class="valid-feedback">Looks good!</div>
                         </div>
 
-                        <!-- alumni roll no  -->
+                        <!-- Alumni roll no -->
                         <div class="form-floating mb-3">
                           <input
                             type="text"
                             class="form-control"
-                            id="floatingInput"
-                            placeholder="Roll no"
+                            id="rollNo"
+                            placeholder="Roll No"
                             name="rollno"
+                            required
                           />
-                          <label for="floatingInput">Roll No</label>
+                          <label for="rollNo" class="form-label">Roll No</label>
+                          <div class="invalid-feedback">
+                            Please enter a valid roll number.
+                          </div>
                         </div>
 
-                        <!-- Department  -->
+                        <!-- Department -->
                         <div class="form-floating mb-3">
                           <select
                             class="form-select"
                             id="departmentSelect"
                             aria-label="Department"
                             name="Department"
+                            required
                           >
-                            <option selected>Select Department</option>
+                            <option value="">Select Department</option>
                             <option value="CSE">CSE</option>
                             <option value="IT">IT</option>
                             <option value="ECE">ECE</option>
@@ -99,17 +116,21 @@
                             <option value="Mech">Mech</option>
                           </select>
                           <label for="departmentSelect">Department</label>
+                          <div class="invalid-feedback">
+                            Please select a department.
+                          </div>
                         </div>
 
-                        <!-- batch  -->
+                        <!-- Batch -->
                         <div class="form-floating mb-3">
                           <select
                             class="form-select"
                             id="batchSelect"
                             aria-label="Batch"
                             name="Batch"
+                            required
                           >
-                            <option selected>select year</option>
+                            <option value="">Select Year</option>
                             <option value="2025">2021 - 2025</option>
                             <option value="2024">2020 - 2024</option>
                             <option value="2023">2019 - 2023</option>
@@ -117,414 +138,331 @@
                             <option value="2021">2017 - 2021</option>
                             <option value="2020">2016 - 2020</option>
                           </select>
-                          <label for="batchSelect">batch</label>
+                          <label for="batchSelect">Batch</label>
+                          <div class="invalid-feedback">
+                            Please select a batch.
+                          </div>
                         </div>
 
-                        <!-- year of passed out from kce  -->
-                        <div class="px-2 mb-3 card">
-                          <p class="my-2">
-                            Select year of passing from the KCE within in past
-                          </p>
+                        <!-- Year of passing -->
+                        <div class="mb-3">
+                          <p>Select year of passing from KCE</p>
                           <div class="form-check">
                             <input
                               class="form-check-input"
                               type="radio"
                               name="passingYear"
-                              id="flexRadioDefault1"
+                              id="passingYear1"
                               value="a year"
                             />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioDefault1"
+                            <label class="form-check-label" for="passingYear1"
+                              >A Year</label
                             >
-                              a year
-                            </label>
                           </div>
                           <div class="form-check">
                             <input
                               class="form-check-input"
                               type="radio"
                               name="passingYear"
-                              id="flexRadioDefault2"
+                              id="passingYear2"
                               value="less than 5 year"
-                              checked
                             />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioDefault2"
+                            <label class="form-check-label" for="passingYear2"
+                              >Less than 5 Years</label
                             >
-                              less than 5 year
-                            </label>
                           </div>
                           <div class="form-check">
                             <input
                               class="form-check-input"
                               type="radio"
                               name="passingYear"
-                              id="flexRadioDefault2"
+                              id="passingYear3"
                               value="more than 5 years"
-                              checked
                             />
-                            <label
-                              class="form-check-label"
-                              for="flexRadioDefault2"
+                            <label class="form-check-label" for="passingYear3"
+                              >More than 5 Years</label
                             >
-                              more than 5 years
-                            </label>
                           </div>
                         </div>
 
-                        <!-- highest degree earned  -->
-                        <div class="px-2 mb-3 card">
-                          <p class="my-2">Highest Degree</p>
-                          <div class="container-fluid">
-                            <div
-                              class="d-xl-flex align-items-start gap-5 justify-content-lg-start my-xl-2"
-                            >
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
-                                  value="B.E"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="highestDegreeEarn"
-                                >
-                                  B.E
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
-                                  value="M.E"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="highestDegreeEarn"
-                                >
-                                  M.E
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
-                                  value="M.S"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="highestDegreeEarn"
-                                >
-                                  M.S
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
-                                  value="Ph.D"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="highestDegreeEarn"
-                                >
-                                  Ph.D
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="highestDegreeEarn"
-                                  id="highestDegreeEarn"
-                                  value="others"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="highestDegreeEarn"
-                                >
-                                  Others
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="form-floating d-inline d-none">
+                        <!-- Highest degree earned -->
+                        <div class="mb-3">
+                          <p>Highest Degree</p>
+                          <div class="form-check">
                             <input
-                              type="email"
-                              class="form-control w-50 my-3"
-                              id="floatingInputValue"
-                              placeholder="name@example.com"
-                              name="email"
+                              class="form-check-input"
+                              type="radio"
+                              name="highestDegreeEarn"
+                              id="highestDegree1"
+                              value="B.E"
                             />
-                            <label for="floatingInputValue"
-                              >Enter your degree</label
+                            <label class="form-check-label" for="highestDegree1"
+                              >B.E</label
                             >
                           </div>
-                        </div>
-
-                        <!-- present position  -->
-                        <div>
-                          <div class="form-floating mb-3">
+                          <div class="form-check">
                             <input
-                              type="text "
-                              class="form-control"
-                              id="presentPosition"
-                              placeholder="senior developer"
-                              name="position"
+                              class="form-check-input"
+                              type="radio"
+                              name="highestDegreeEarn"
+                              id="highestDegree2"
+                              value="M.E"
                             />
-                            <label for="presentPosition"
-                              >Present Position</label
+                            <label class="form-check-label" for="highestDegree2"
+                              >M.E</label
                             >
                           </div>
-                        </div>
-
-                        <!-- salary  -->
-                        <div class="">
-                          <div class="form-floating mb-3">
+                          <div class="form-check">
                             <input
-                              type="tel"
-                              class="form-control"
-                              id="salary"
-                              placeholder="salary"
-                              name="salary"
+                              class="form-check-input"
+                              type="radio"
+                              name="highestDegreeEarn"
+                              id="highestDegree3"
+                              value="M.S"
                             />
-                            <label for="salary"> salary </label>
+                            <label class="form-check-label" for="highestDegree3"
+                              >M.S</label
+                            >
                           </div>
-                        </div>
-
-                        <!-- name of the organisation -->
-                        <div>
-                          <div class="form-floating mb-3">
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="highestDegreeEarn"
+                              id="highestDegree4"
+                              value="Ph.D"
+                            />
+                            <label class="form-check-label" for="highestDegree4"
+                              >Ph.D</label
+                            >
+                          </div>
+                          <div class="form-check">
+                            <input
+                              class="form-check-input"
+                              type="radio"
+                              name="highestDegreeEarn"
+                              id="others"
+                              value="others"
+                            />
+                            <label class="form-check-label" for="highestDegree5"
+                              >Others</label
+                            >
+                          </div>
+                          <div
+                            class="form-floating my-md-3 my-2 d-none"
+                            id="otherHighestDegree"
+                          >
                             <input
                               type="text"
+                              id="otherHighestDegreeInput"
                               class="form-control"
-                              id="organisationName"
-                              placeholder="organisationName"
-                              name="organisation"
+                              name="highestDegreeEarn"
+                              placeholder="Enter the degree"
                             />
-                            <label for="organisationName"
-                              >Name of the Organistaion</label
+                            <label for="otherHighestDegreeInput"
+                              >Enter the degree</label
                             >
                           </div>
                         </div>
 
-                        <!-- area of the work  -->
-                        <div>
-                          <div class="form-floating mb-3">
-                            <select
-                              class="form-select"
-                              id="batchSelect"
-                              aria-label="Batch"
-                              name="work"
-                            >
-                              <option selected>select area of work</option>
-                              <option value="Networking">Networking</option>
-                              <option value="Instrumentation">
-                                Instrumentation
-                              </option>
-                              <option value="Corporate">Corporate</option>
-                              <option value="Design">Design</option>
-                              <option value="Project-Manager">
-                                Project Manager
-                              </option>
-                              <option value="Banking">Banking</option>
-                              <option value="Developer">Developer</option>
-                              <option value="IT">IT</option>
-                              <option value="Others">Others</option>
-                            </select>
-                            <label for="batchSelect">Batch</label>
+                        <!-- Present position -->
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="presentPosition"
+                            placeholder="Senior Developer"
+                            name="position"
+                            required
+                          />
+                          <label for="presentPosition">Present Position</label>
+                          <div class="invalid-feedback">
+                            Please enter your present position.
                           </div>
-                          <div class="form-floating d-none mb-3">
+                        </div>
+
+                        <!-- Salary -->
+                        <div class="form-floating mb-3">
+                          <input
+                            type="tel"
+                            class="form-control"
+                            id="salary"
+                            placeholder="Salary"
+                            name="salary"
+                            required
+                          />
+                          <label for="salary">Salary</label>
+                          <div class="invalid-feedback">
+                            Please enter your salary.
+                          </div>
+                        </div>
+
+                        <!-- Name of the organization -->
+                        <div class="form-floating mb-3">
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="organisationName"
+                            placeholder="Organization Name"
+                            name="organisation"
+                            required
+                          />
+                          <label for="organisationName"
+                            >Name of the Organization</label
+                          >
+                          <div class="invalid-feedback">
+                            Please enter the organization name.
+                          </div>
+                        </div>
+
+                        <!-- Area of work -->
+                        <div class="form-floating mb-3">
+                          <select
+                            class="form-select"
+                            id="workSelect"
+                            aria-label="Area of Work"
+                            name="work"
+                            required
+                          >
+                            <option value="">Select Area of Work</option>
+                            <option name="areaOfWork" value="Networking">
+                              Networking
+                            </option>
+                            <option name="areaOfWork" value="Instrumentation">
+                              Instrumentation
+                            </option>
+                            <option name="areaOfWork" value="Corporate">
+                              Corporate
+                            </option>
+                            <option name="areaOfWork" value="Design">
+                              Design
+                            </option>
+                            <option name="areaOfWork" value="Project-Manager">
+                              Project Manager
+                            </option>
+                            <option name="areaOfWork" value="Banking">
+                              Banking
+                            </option>
+                            <option name="areaOfWork" value="Developer">
+                              Developer
+                            </option>
+                            <option name="areaOfWork" value="IT">IT</option>
+                            <option name="areaOfWork" value="Others">
+                              Others
+                            </option>
+                          </select>
+
+                          <div
+                            class="form-floating my-md-3 my-2 d-none"
+                            id="areaOfWorkInput"
+                          >
                             <input
                               type="text"
-                              class="form-control"
-                              id="areaOfWork"
+                              id="otherHighestDegreeInput"
+                              class="form-control is-"
                               name="areaOfWork"
+                              placeholder="Enter your area of work"
                             />
-                            <label for="areaOfWork">Area Of Interest</label>
-                          </div>
-                        </div>
 
-                        <!-- primary job function  -->
-                        <div>
-                          <div class="form-floating mb-3">
-                            <select
-                              class="form-select"
-                              id="primaryJob"
-                              aria-label="primaryJob"
-                              name="role"
+                            <label for="otherHighestDegreeInput"
+                              >Enter your area of work</label
                             >
-                              <option selected>select a role</option>
-                              <option value="testingControl">
-                                Testing/Quality Control
-                              </option>
-                              <option value="Instrumentation">
-                                Instrumentation
-                              </option>
-                              <option value="Education">Education</option>
-                              <option value="R&D">
-                                Research and Development
-                              </option>
-                              <option value="operateAndMaintenance">
-                                Operate &amp; Maintenance
-                              </option>
-                              <option value="Management">Management</option>
-                              <option value="Developer">Developer</option>
-                              <option value="graduateStudent">
-                                Graduate Student
-                              </option>
-                              <option value="Component">Component</option>
-                              <option value="Others">others</option>
-                            </select>
-                            <label for="primaryJob">Primary Job</label>
                           </div>
-                          <div class="form-floating d-none mb-3">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="areaOfWork"
-                              name="areaOfWork"
-                            />
-                            <label for="areaOfWork">Area Of Interest</label>
+                          <label for="workSelect">Area of Work</label>
+                          <div class="invalid-feedback">
+                            Please select an area of work.
                           </div>
                         </div>
 
-                        <!-- worked as engineer  -->
-                        <div class="px-2 mb-3 card">
-                          <p class="my-2">Worked as Engineer</p>
-                          <div class="container-fluid">
-                            <div
-                              class="d-xl-flex align-items-start gap-5 justify-content-lg-start my-xl-2"
-                            >
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="noOfYearsWorked"
-                                  id="noOfYearsWorked"
-                                  value="1-2"
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="noOfYearsWorked"
-                                >
-                                  1 - 2
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  value="3-4"
-                                  name="noOfYearsWorked"
-                                  id="noOfYearsWorked"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="noOfYearsWorked"
-                                >
-                                  3 - 4
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  name="noOfYearsWorked"
-                                  id="noOfYearsWorked"
-                                  value="5-6"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="noOfYearsWorked"
-                                >
-                                  5 - 6
-                                </label>
-                              </div>
-                              <div class="form-check">
-                                <input
-                                  class="form-check-input"
-                                  type="radio"
-                                  value=">=7"
-                                  name="noOfYearsWorked"
-                                  id="noOfYearsWorked"
-                                  checked
-                                />
-                                <label
-                                  class="form-check-label"
-                                  for="noOfYearsWorked"
-                                >
-                                  >=7
-                                </label>
-                              </div>
-                            </div>
-                          </div>
-
-                          <div class="form-floating d-inline d-none">
-                            <input
-                              type="text"
-                              class="form-control w-50 my-3"
-                              id="degree"
-                              placeholder="name@example.com"
-                              name=""
-                            />
-                            <label for="degree">Enter your degree</label>
+                        <!-- Primary job function -->
+                        <div class="form-floating mb-3">
+                          <select
+                            class="form-select"
+                            id="primaryJob"
+                            aria-label="Primary Job"
+                            name="role"
+                            required
+                          >
+                            <option value="">Select a Role</option>
+                            <option value="Testing/Quality Control">
+                              Testing/Quality Control
+                            </option>
+                            <option value="Instrumentation">
+                              Instrumentation
+                            </option>
+                            <option value="Development">Development</option>
+                            <option value="Project Management">
+                              Project Management
+                            </option>
+                            <option value="Research and Development">
+                              Research and Development
+                            </option>
+                            <option value="Others">Others</option>
+                          </select>
+                          <label for="primaryJob">Primary Job Function</label>
+                          <div class="invalid-feedback">
+                            Please select a primary job function.
                           </div>
                         </div>
 
-                        <!-- contact number  -->
+                        <div
+                          class="form-floating mb-3 d-none"
+                          id="otherJobInput"
+                        >
+                          <input
+                            type="text"
+                            id="otherJob"
+                            class="form-control"
+                            name="otherJob"
+                            placeholder="Enter your job function"
+                          />
+                          <label for="otherJob"
+                            >Specify Other Job Function</label
+                          >
+                          <div class="invalid-feedback">
+                            Please specify your job function.
+                          </div>
+                        </div>
+
+                        <!-- Contact number -->
                         <div class="form-floating mb-3">
                           <input
                             type="tel"
                             class="form-control"
                             id="contactNumber"
-                            placeholder="contact number"
+                            placeholder="Contact Number"
                             name="number"
+                            required
                           />
                           <label for="contactNumber">Contact Number</label>
-                        </div>
-
-                        <div>
-                          <div class="form-floating mb-3">
-                            <input
-                              type="email"
-                              id="email"
-                              class="form-control"
-                              placeholder="Email"
-                              name="email"
-                              required
-                            />
-                            <label for="email">Email</label>
+                          <div class="invalid-feedback">
+                            Please enter a valid contact number.
                           </div>
                         </div>
+
+                        <!-- Email -->
+                        <div class="form-floating mb-3">
+                          <input
+                            type="email"
+                            id="email"
+                            class="form-control"
+                            placeholder="Email"
+                            name="email"
+                            required
+                          />
+                          <label for="email">Email</label>
+                          <div class="invalid-feedback">
+                            Please enter a valid email address.
+                          </div>
+                        </div>
+
+                        <!-- Submit button -->
                         <div class="text-end">
                           <button
-                            class="btn shadow text-center border border-primary bg-primary-subtle"
-                            type="submit"
-                            value="submit"
-                            name="submit"
+                            class="btn bg-primary-subtle border-primary mt-3"
                           >
-                            Next Page <i class="bi bi-arrow-right"></i>
+                            Submit
                           </button>
-
-                          <!-- href="AlumniInfo.html"  -->
                         </div>
                       </form>
                     </div>
@@ -539,6 +477,28 @@
     </section>
 
     <!-- bootstrap cdn script -->
+    <script>
+      (() => {
+        "use strict";
+
+        const forms = document.querySelectorAll(".needs-validation");
+
+        Array.from(forms).forEach((form) => {
+          form.addEventListener(
+            "submit",
+            (event) => {
+              if (!form.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+              }
+
+              form.classList.add("was-validated");
+            },
+            false
+          );
+        });
+      })();
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
       integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -549,5 +509,53 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const aim_radio = document.querySelectorAll(
+        'input[name="highestDegreeEarn"]'
+      );
+      aim_radio.forEach((radio) => {
+        console.log("jhdjdvf");
+        radio.addEventListener("change", (event) => {
+          console.log("event triggered");
+          if (document.getElementById("others").checked) {
+            document
+              .getElementById("otherHighestDegree")
+              .classList.remove("d-none");
+            console.log("remove");
+          } else {
+            document
+              .getElementById("otherHighestDegree")
+              .classList.add("d-none");
+            console.log("add");
+          }
+        });
+      });
+
+      //area of work
+
+      const workSelect = document.getElementById("workSelect");
+      const areaOfWorkInput = document.getElementById("areaOfWorkInput");
+
+      workSelect.addEventListener("change", () => {
+        // Check if the selected value is "Others"
+        if (workSelect.value === "Others") {
+          areaOfWorkInput.classList.remove("d-none"); // Show input field
+        } else {
+          areaOfWorkInput.classList.add("d-none"); // Hide input field
+        }
+      });
+
+      //primary job
+
+      const primaryJobSelect = document.getElementById("primaryJob");
+      const otherJobInput = document.getElementById("otherJobInput");
+      primaryJobSelect.addEventListener("change", () => {
+        if (primaryJobSelect.value === "Others") {
+          otherJobInput.classList.remove("d-none");
+        } else {
+          otherJobInput.classList.add("d-none");
+        }
+      });
+    </script>
   </body>
 </html>
