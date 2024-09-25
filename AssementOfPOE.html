@@ -17,11 +17,11 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-    <script src="./script/AssementOfPOE.js"></script>
 
     <link rel="stylesheet" href="./style/style.css" />
     <link rel="stylesheet" href="./style/index.css" />
     <link rel="stylesheet" href="./style/AlumniQuestionnarie.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <!-- navbar section  -->
@@ -59,7 +59,7 @@
                   categories, ranging from “5- High” to “1-Lowest”.
                 </div>
 
-                <form onsubmit="handleSubmit(e)">
+                <form onsubmit="handleSubmit(event)">
                   <!-- q1 -->
                   <div class="px-md-5 my-3 my-md-4 px-1">
                     <div class="card border border-1 shadow px-3 pt-3">
@@ -256,7 +256,7 @@
                   <!-- button  -->
                   <div class="text-end pe-md-5">
                     <button
-                      onclick="handleSubmit()"
+                      onclick="handleSubmit"
                       class="btn bg-primary-subtle border-primary"
                     >
                       Submit
@@ -273,7 +273,16 @@
 
     <!-- bootstrap cdn script -->
     <script>
-   
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        Swal.fire({
+          title: "Submission Received!",
+          text: "Thank you for submitting your feedback.",
+          icon: "success",
+          timer: 4000,
+          showConfirmButton: false,
+        });
+      };
     </script>
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

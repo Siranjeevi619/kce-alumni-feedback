@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POE Assessment</title>
+    <!-- SweetAlert2 CDN -->
+  </head>
+  <body>
+    <form onsubmit="handleSubmit(event)">
+      <!-- Your form elements here -->
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- Your custom script -->
+    <script>
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        Swal.fire({
+          title: "Submission Received!",
+          text: "Thank you for submitting your feedback.",
+          icon: "success",
+          timer: 5000,
+          showConfirmButton: false,
+        });
+      };
+    </script>
+  </body>
+</html>

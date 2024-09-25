@@ -50,11 +50,12 @@
                   <div class="row">
                     <div class="col-12 col-md-2"></div>
                     <div class="col-12 col-md-8">
-                      <form class="Montserrat">
+                      <form class="Montserrat" action="" method="post">
                         <!-- alumni name  -->
                         <div class="form-floating mb-3">
                           <input
-                            type="email"
+                            type="text"
+                            name="name"
                             class="form-control"
                             id="floatingInput"
                             placeholder="name of the alumni"
@@ -65,10 +66,11 @@
                         <!-- alumni roll no  -->
                         <div class="form-floating mb-3">
                           <input
-                            type="email"
+                            type="text"
                             class="form-control"
                             id="floatingInput"
                             placeholder="Roll no"
+                            name="rollno"
                           />
                           <label for="floatingInput">Roll No</label>
                         </div>
@@ -79,6 +81,7 @@
                             class="form-select"
                             id="departmentSelect"
                             aria-label="Department"
+                            name="Department"
                           >
                             <option selected>Select Department</option>
                             <option value="CSE">CSE</option>
@@ -104,6 +107,7 @@
                             class="form-select"
                             id="batchSelect"
                             aria-label="Batch"
+                            name="Batch"
                           >
                             <option selected>select year</option>
                             <option value="2025">2021 - 2025</option>
@@ -127,6 +131,7 @@
                               type="radio"
                               name="passingYear"
                               id="flexRadioDefault1"
+                              value="a year"
                             />
                             <label
                               class="form-check-label"
@@ -141,6 +146,7 @@
                               type="radio"
                               name="passingYear"
                               id="flexRadioDefault2"
+                              value="less than 5 year"
                               checked
                             />
                             <label
@@ -156,6 +162,7 @@
                               type="radio"
                               name="passingYear"
                               id="flexRadioDefault2"
+                              value="more than 5 years"
                               checked
                             />
                             <label
@@ -180,6 +187,7 @@
                                   type="radio"
                                   name="highestDegreeEarn"
                                   id="highestDegreeEarn"
+                                  value="B.E"
                                 />
                                 <label
                                   class="form-check-label"
@@ -194,6 +202,7 @@
                                   type="radio"
                                   name="highestDegreeEarn"
                                   id="highestDegreeEarn"
+                                  value="M.E"
                                   checked
                                 />
                                 <label
@@ -209,6 +218,7 @@
                                   type="radio"
                                   name="highestDegreeEarn"
                                   id="highestDegreeEarn"
+                                  value="M.S"
                                   checked
                                 />
                                 <label
@@ -224,6 +234,7 @@
                                   type="radio"
                                   name="highestDegreeEarn"
                                   id="highestDegreeEarn"
+                                  value="Ph.D"
                                   checked
                                 />
                                 <label
@@ -239,6 +250,7 @@
                                   type="radio"
                                   name="highestDegreeEarn"
                                   id="highestDegreeEarn"
+                                  value="others"
                                   checked
                                 />
                                 <label
@@ -257,7 +269,7 @@
                               class="form-control w-50 my-3"
                               id="floatingInputValue"
                               placeholder="name@example.com"
-                              value=""
+                              name="email"
                             />
                             <label for="floatingInputValue"
                               >Enter your degree</label
@@ -273,6 +285,7 @@
                               class="form-control"
                               id="presentPosition"
                               placeholder="senior developer"
+                              name="position"
                             />
                             <label for="presentPosition"
                               >Present Position</label
@@ -288,6 +301,7 @@
                               class="form-control"
                               id="salary"
                               placeholder="salary"
+                              name="salary"
                             />
                             <label for="salary"> salary </label>
                           </div>
@@ -301,6 +315,7 @@
                               class="form-control"
                               id="organisationName"
                               placeholder="organisationName"
+                              name="organisation"
                             />
                             <label for="organisationName"
                               >Name of the Organistaion</label
@@ -315,6 +330,7 @@
                               class="form-select"
                               id="batchSelect"
                               aria-label="Batch"
+                              name="work"
                             >
                               <option selected>select area of work</option>
                               <option value="Networking">Networking</option>
@@ -351,6 +367,7 @@
                               class="form-select"
                               id="primaryJob"
                               aria-label="primaryJob"
+                              name="role"
                             >
                               <option selected>select a role</option>
                               <option value="testingControl">
@@ -466,7 +483,7 @@
                               class="form-control w-50 my-3"
                               id="degree"
                               placeholder="name@example.com"
-                              value=""
+                              name=""
                             />
                             <label for="degree">Enter your degree</label>
                           </div>
@@ -479,6 +496,7 @@
                             class="form-control"
                             id="contactNumber"
                             placeholder="contact number"
+                            name="number"
                           />
                           <label for="contactNumber">Contact Number</label>
                         </div>
@@ -490,6 +508,7 @@
                               id="email"
                               class="form-control"
                               placeholder="Email"
+                              name="email"
                               required
                             />
                             <label for="email">Email</label>
@@ -498,10 +517,14 @@
                         <div class="text-end">
                           <button
                             class="btn shadow text-center border border-primary bg-primary-subtle"
-                            href="AlumniInfo.html"
+                            type="submit"
+                            value="submit"
+                            name="submit"
                           >
                             Next Page <i class="bi bi-arrow-right"></i>
                           </button>
+
+                          <!-- href="AlumniInfo.html"  -->
                         </div>
                       </form>
                     </div>
