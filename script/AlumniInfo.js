@@ -46,12 +46,14 @@ const handleInfoForm = (e) => {
     feedback.style.display = "none";
   });
 
+  // Check for work experience selection
   const workExperience = document.querySelector(
     'input[name="workExperience"]:checked'
   );
   if (!workExperience) {
     document.querySelector(".invalid-feedback").style.display = "block";
-    return;
+    return; 
+  }
 
   // const otherHighestDegree = document.getElementById("otherHighestDegreeInput");
   // otherHighestDegree.addEventListener("change", () => {
