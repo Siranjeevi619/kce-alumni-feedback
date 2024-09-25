@@ -69,7 +69,7 @@
                           <label for="alumniName" class="form-label"
                             >Alumni Name</label
                           >
-                          <div class="invalid-feedback">
+                          <div class="invalid-feedback" id="name-invalid">
                             Please enter the alumni name.
                           </div>
                         </div>
@@ -91,20 +91,6 @@
                         </div>
 
                         <!-- Email -->
-                        <div class="form-floating mb-3">
-                          <input
-                            type="email"
-                            class="form-control"
-                            id="email"
-                            placeholder="Email"
-                            name="email"
-                            required
-                          />
-                          <label for="email" class="form-label">Email</label>
-                          <div class="invalid-feedback">
-                            Please enter a valid email address.
-                          </div>
-                        </div>
 
                         <!-- Mobile Number -->
 
@@ -312,7 +298,7 @@
                             required
                           />
                           <label for="salary">Salary</label>
-                          <div class="invalid-feedback">
+                          <div class="invalid-feedback" id="salary-invalid">
                             Please enter your salary.
                           </div>
                         </div>
@@ -503,9 +489,10 @@
                             required
                           />
                           <label for="contactNumber">Contact Number</label>
-                          <div class="invalid-feedback">
-                            Please enter a valid contact number.
-                          </div>
+                          <div
+                            class="invalid-feedback"
+                            id="phone-invalid"
+                          ></div>
                         </div>
 
                         <!-- Email -->
@@ -546,6 +533,65 @@
     </section>
 
     <!-- bootstrap cdn script -->
+
+    <script>
+      //userName
+      function phoneNumberValidation(str) {
+        return /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/.test(str);
+      }
+
+      function containsString(str) {
+        return /^[a-zA-Z ]{2,30}$/.test(str);
+      }
+      function salaryFormat(str) {
+        return /^\d+$/.test(str);
+      }
+      const alumniName = document.getElementById("alumniName");
+
+      alumniName.addEventListener("change", () => {
+        if (!containsString(alumniName.value)) {
+          alumniName.classList.add("is-invalid");
+          document.getElementById("name-invalid").innerText =
+            "Name cannot contain Numbers and Symbols";
+        } else {
+          alumniName.classList.remove("is-invalid");
+          document.getElementById("name-invalid").classList.add("d-none");
+        }
+      });
+
+      // salary
+
+      const salary = document.getElementById("salary");
+      salary.addEventListener("change", () => {
+        if (!salaryFormat(salary.value)) {
+          document.getElementById("salary").classList.add("is-invalid");
+          document.getElementById("salary-invalid").innerText =
+            "Salary contains number only";
+        } else {
+          document.getElementById("salary").classList.remove("is-invalid");
+          document.getElementById("salary-invalid").style.display = "none";
+        }
+      });
+
+      //phone number
+      const phoneNumberPattern = /^[6-9]\d{9}$/;
+      const phoneNumber = document.getElementById("contactNumber");
+
+      phoneNumber.addEventListener("change", () => {
+        const phoneValue = phoneNumber.value;
+        const phoneValid = document.getElementById("phone-valid");
+
+        if (phoneNumberValidation(phoneValue) === false) {
+          phoneNumber.classList.add("is-invalid");
+          phoneValid.innerText = "Only 10 digits starting with 6-9 are allowed";
+          phoneValid.classList.remove("d-none");
+        } else {
+          phoneNumber.classList.remove("is-invalid");
+          phoneValid.classList.add("d-none");
+        }
+      });
+    </script>
+
     <script>
       (() => {
         "use strict";
