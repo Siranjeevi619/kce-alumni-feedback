@@ -72,7 +72,6 @@
                           <div class="invalid-feedback">
                             Please enter the alumni name.
                           </div>
-                          <div class="valid-feedback">Looks good!</div>
                         </div>
 
                         <!-- Alumni roll no -->
@@ -359,7 +358,7 @@
                             <input
                               type="text"
                               id="otherHighestDegreeInput"
-                              class="form-control is-"
+                              class="form-control"
                               name="areaOfWork"
                               placeholder="Enter your area of work"
                             />
@@ -416,7 +415,7 @@
                             name="otherJob"
                             placeholder="Enter your job function"
                           />
-                          <label for="otherJob"
+                          <label for="otherJob" class="form-label"
                             >Specify Other Job Function</label
                           >
                           <div class="invalid-feedback">
@@ -510,6 +509,7 @@
       crossorigin="anonymous"
     ></script>
     <script>
+      
       const aim_radio = document.querySelectorAll(
         'input[name="highestDegreeEarn"]'
       );

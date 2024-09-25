@@ -1,6 +1,5 @@
 import Swal from "sweetalert2";
 
-
 const handleInfoForm = (e) => {
   e.preventDefault();
 
@@ -20,7 +19,6 @@ const handleInfoForm = (e) => {
 
   const mobileNumberPattern = /^\d{10}$/;
   if (mobileNumberPattern.test(mobileNumberInput)) {
-    //
     phoneNumberInput.classList.add("is-invalid");
   } else {
     phoneNumberInput.classList.remove("is-invalid");
@@ -33,6 +31,16 @@ const handleInfoForm = (e) => {
   } else {
     salary.classList.remove("is-invalid");
   }
+
+  // const otherHighestDegree = document.getElementById("otherHighestDegreeInput");
+  // otherHighestDegree.addEventListener("change", () => {
+  //   if (otherHighestDegree.length > 3) {
+  //     otherHighestDegree.classList.add("is-valid");
+  //     otherHighestDegree.classList.remove("is-invalid");
+  //   } else {
+  //     otherHighestDegree.classList.add("is-valid");
+  //   }
+  // });
 
   const rollNo = document.getElementById.value;
   const department = document.getElementById.value;
