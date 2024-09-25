@@ -2,6 +2,17 @@ import Swal from "sweetalert2";
 
 const handleInfoForm = (e) => {
   e.preventDefault();
+  const radiobtn = document.getElementsByName("passingYear");
+  let isChecked = false;
+
+  for (let i = 0; i < radiobtn.length; i++) {
+    if (radiobtn[i].checked) {
+      isChecked = true;
+      break;
+      
+    }
+  }
+
 
   const alumniName = document.getElementById("alumniName");
   const alumniNameInput = alumniName.value;

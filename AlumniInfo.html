@@ -90,6 +90,41 @@
                           </div>
                         </div>
 
+                        <!-- Email -->
+                        <div class="form-floating mb-3">
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            placeholder="Email"
+                            name="email"
+                            required
+                          />
+                          <label for="email" class="form-label">Email</label>
+                          <div class="invalid-feedback">
+                            Please enter a valid email address.
+                          </div>
+                        </div>
+
+                        <!-- Mobile Number -->
+                        <div class="form-floating mb-3">
+                          <input
+                            type="tel"
+                            class="form-control"
+                            id="mobileNo"
+                            placeholder="Mobile Number"
+                            name="mobile"
+                            required
+                            pattern="[0-9]{10}"
+                          />
+                          <label for="mobileNo" class="form-label"
+                            >Mobile Number</label
+                          >
+                          <div class="invalid-feedback">
+                            Please enter a valid 10-digit mobile number.
+                          </div>
+                        </div>
+
                         <!-- Department -->
                         <div class="form-floating mb-3">
                           <select
@@ -100,19 +135,19 @@
                             required
                           >
                             <option value="">Select Department</option>
-                            <option value="CSE">CSE</option>
+                            <option value="CS">CSE</option>
                             <option value="IT">IT</option>
-                            <option value="ECE">ECE</option>
-                            <option value="EEE">EEE</option>
-                            <option value="ETE">ETE</option>
-                            <option value="AIDS">AI&DS</option>
-                            <option value="CSD">CSD</option>
-                            <option value="CST">CST</option>
-                            <option value="Cyber Security">
+                            <option value="EC">ECE</option>
+                            <option value="EE">EEE</option>
+                            <option value="ET">ETE</option>
+                            <option value="AD">AI&DS</option>
+                            <option value="CD">CSD</option>
+                            <option value="CT">CST</option>
+                            <option value="CY">
                               Cyber Security
                             </option>
-                            <option value="Civil">Civil</option>
-                            <option value="Mech">Mech</option>
+                            <option value="CE">Civil</option>
+                            <option value="ME">Mech</option>
                           </select>
                           <label for="departmentSelect">Department</label>
                           <div class="invalid-feedback">
@@ -153,6 +188,7 @@
                               name="passingYear"
                               id="passingYear1"
                               value="a year"
+                              required
                             />
                             <label class="form-check-label" for="passingYear1"
                               >A Year</label
@@ -182,6 +218,9 @@
                               >More than 5 Years</label
                             >
                           </div>
+                          <div class="invalid-feedback">
+                            Please select a passing year.
+                          </div>
                         </div>
 
                         <!-- Highest degree earned -->
@@ -194,6 +233,7 @@
                               name="highestDegreeEarn"
                               id="highestDegree1"
                               value="B.E"
+                              required
                             />
                             <label class="form-check-label" for="highestDegree1"
                               >B.E</label
@@ -239,7 +279,7 @@
                             <input
                               class="form-check-input"
                               type="radio"
-                              name="highestDegreeEarn"
+                              name="highestDegreeEarn1"
                               id="others"
                               value="others"
                             />
@@ -324,47 +364,33 @@
                             required
                           >
                             <option value="">Select Area of Work</option>
-                            <option name="areaOfWork" value="Networking">
-                              Networking
-                            </option>
-                            <option name="areaOfWork" value="Instrumentation">
+                            <option value="Networking">Networking</option>
+                            <option value="Instrumentation">
                               Instrumentation
                             </option>
-                            <option name="areaOfWork" value="Corporate">
-                              Corporate
-                            </option>
-                            <option name="areaOfWork" value="Design">
-                              Design
-                            </option>
-                            <option name="areaOfWork" value="Project-Manager">
+                            <option value="Corporate">Corporate</option>
+                            <option value="Design">Design</option>
+                            <option value="Project-Manager">
                               Project Manager
                             </option>
-                            <option name="areaOfWork" value="Banking">
-                              Banking
-                            </option>
-                            <option name="areaOfWork" value="Developer">
-                              Developer
-                            </option>
-                            <option name="areaOfWork" value="IT">IT</option>
-                            <option name="areaOfWork" value="Others">
-                              Others
-                            </option>
+                            <option value="Banking">Banking</option>
+                            <option value="Developer">Developer</option>
+                            <option value="IT">IT</option>
+                            <option value="Others">Others</option>
                           </select>
-
                           <div
                             class="form-floating my-md-3 my-2 d-none"
                             id="areaOfWorkInput"
                           >
                             <input
                               type="text"
-                              id="otherHighestDegreeInput"
+                              id="areaOfWorkInput"
                               class="form-control"
-                              name="areaOfWork"
-                              placeholder="Enter your area of work"
+                              name="work1"
+                              placeholder="Enter other area of work"
                             />
-
-                            <label for="otherHighestDegreeInput"
-                              >Enter your area of work</label
+                            <label for="areaOfWorkInput"
+                              >Enter other area of work</label
                             >
                           </div>
                           <label for="workSelect">Area of Work</label>
@@ -378,48 +404,50 @@
                           <select
                             class="form-select"
                             id="primaryJob"
-                            aria-label="Primary Job"
-                            name="role"
+                            aria-label="Primary Job Function"
+                            name="primaryJob"
                             required
                           >
-                            <option value="">Select a Role</option>
-                            <option value="Testing/Quality Control">
-                              Testing/Quality Control
+                            <option value="">
+                              Select Primary Job Function
                             </option>
+                            <option value="Technical">Technical</option>
+                            <option value="AI/ML">AI/ML</option>
+                            <option value="Management">Management</option>
+                            <option value="Sales">Sales</option>
+                            <option value="Networking">Networking</option>
                             <option value="Instrumentation">
                               Instrumentation
                             </option>
-                            <option value="Development">Development</option>
-                            <option value="Project Management">
-                              Project Management
+                            <option value="Corporate">Corporate</option>
+                            <option value="Design">Design</option>
+                            <option value="Project Manager">
+                              Project Manager
                             </option>
-                            <option value="Research and Development">
-                              Research and Development
-                            </option>
+                            <option value="Education">Education</option>
+                            <option value="Banking">Banking</option>
+                            <option value="Developer">Developer</option>
+                            <option value="IT">IT</option>
                             <option value="Others">Others</option>
                           </select>
+                          <div
+                            class="form-floating my-md-3 my-2 d-none"
+                            id="otherPrimaryJobInput"
+                          >
+                            <input
+                              type="text"
+                              id="otherPrimaryJob"
+                              class="form-control"
+                              name="otherPrimaryJob1"
+                              placeholder="Enter other primary job"
+                            />
+                            <label for="otherPrimaryJob"
+                              >Enter Primary Job</label
+                            >
+                          </div>
                           <label for="primaryJob">Primary Job Function</label>
                           <div class="invalid-feedback">
                             Please select a primary job function.
-                          </div>
-                        </div>
-
-                        <div
-                          class="form-floating mb-3 d-none"
-                          id="otherJobInput"
-                        >
-                          <input
-                            type="text"
-                            id="otherJob"
-                            class="form-control"
-                            name="otherJob"
-                            placeholder="Enter your job function"
-                          />
-                          <label for="otherJob" class="form-label"
-                            >Specify Other Job Function</label
-                          >
-                          <div class="invalid-feedback">
-                            Please specify your job function.
                           </div>
                         </div>
 
@@ -458,9 +486,10 @@
                         <!-- Submit button -->
                         <div class="text-end">
                           <button
-                            class="btn bg-primary-subtle border-primary mt-3"
+                            class="btn border-primary bg-primary-subtle col-md-3 col-6"
+                            id="submit-btn"
                           >
-                            Submit
+                            next
                           </button>
                         </div>
                       </form>
@@ -509,7 +538,6 @@
       crossorigin="anonymous"
     ></script>
     <script>
-      
       const aim_radio = document.querySelectorAll(
         'input[name="highestDegreeEarn"]'
       );
@@ -546,9 +574,9 @@
       });
 
       //primary job
-
       const primaryJobSelect = document.getElementById("primaryJob");
-      const otherJobInput = document.getElementById("otherJobInput");
+      const otherJobInput = document.getElementById("otherPrimaryJobInput");
+
       primaryJobSelect.addEventListener("change", () => {
         if (primaryJobSelect.value === "Others") {
           otherJobInput.classList.remove("d-none");
