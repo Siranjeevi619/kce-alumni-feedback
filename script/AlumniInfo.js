@@ -9,10 +9,8 @@ const handleInfoForm = (e) => {
     if (radiobtn[i].checked) {
       isChecked = true;
       break;
-      
     }
   }
-
 
   const alumniName = document.getElementById("alumniName");
   const alumniNameInput = alumniName.value;
@@ -42,6 +40,18 @@ const handleInfoForm = (e) => {
   } else {
     salary.classList.remove("is-invalid");
   }
+
+  const invalidFeedbacks = document.querySelectorAll(".invalid-feedback");
+  invalidFeedbacks.forEach((feedback) => {
+    feedback.style.display = "none";
+  });
+
+  const workExperience = document.querySelector(
+    'input[name="workExperience"]:checked'
+  );
+  if (!workExperience) {
+    document.querySelector(".invalid-feedback").style.display = "block";
+    return;
 
   // const otherHighestDegree = document.getElementById("otherHighestDegreeInput");
   // otherHighestDegree.addEventListener("change", () => {
